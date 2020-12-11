@@ -3,7 +3,14 @@
 React boilerplate fully options
 
 <code>Is fully Server-Render (React boilerplate)</code>
+<br />
 
+## Start
+
+- `yarn`
+- `yarn start`
+- `yarn build`
+- `yarn start:prod`
 <br />
 <h2> Tools</h2>
 
