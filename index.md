@@ -1,37 +1,163 @@
-## Welcome to GitHub Pages
+# react-boilerplate-fully
 
-You can use the [editor on GitHub](https://github.com/thinnakrit/react-boilerplate-fully/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+React boilerplate fully options
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<code>Is fully Server-Render (React boilerplate)</code>
 
-### Markdown
+<br />
+<h2> Tools</h2>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<table>
+<th>
+<tr>
+<td>Library</td>
+<td>Document</td>
+</tr>
+</th>
+<tr>
+<td>razzle, afterjs</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react, react-dom</td>
+<td>-</td>
+</tr>
+<tr>
+<td>redux, react-redux</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react-helmet</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react-grid-system</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react-i18next</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react-lottie</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react-id-swiper</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react-icons</td>
+<td>-</td>
+</tr>
+<tr>
+<td>react-helmet</td>
+<td>-</td>
+</tr>
+<tr>
+<td>universal-cookie</td>
+<td>-</td>
+</tr>
+</table>
+<br/>
 
-```markdown
-Syntax highlighted code block
+<br />
 
-# Header 1
-## Header 2
-### Header 3
+## Structure
 
-- Bulleted
-- List
+- assets
+- components
+- configs
+- modules
+- themplates
+- utils
+- views
 
-1. Numbered
-2. List
+## Example for use
 
-**Bold** and _Italic_ and `Code` text
+- [x] Authentication example (Signin, Logout)
+- [x] Actions creator example
+- [x] Routing example
+- [ ] Write and edit content example
+- [ ] Connect api example
+- [ ] Admin themplate example
 
-[Link](url) and ![Image](src)
+## Learning
+
+Create new page view
+
+1. Go to folder
+
+```javascript
+// path
+//src/views
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+2. Create group of page view
 
-### Jekyll Themes
+```javascript
+// example
+// src/views/member
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/thinnakrit/react-boilerplate-fully/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+3. Create page view file (You can see example in folder)
 
-### Support or Contact
+```javascript
+// example
+// src/views/member/MemberListView.js
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```javascript
+//example file stucture
+// MemberListView.js
+import React, { Fragment } from 'react'
+// ---
+import { Template } from '~/templates/v1'
+// ---
+const MemberListView = (props) => {
+	return <Fragment>MemberListView Example</Fragment>
+}
+
+MemberListView.getInitialProps = async (props) => {
+	try {
+		const { store } = props
+	} catch (error) {}
+}
+
+export default MemberListView
+```
+
+4. Map page view to sub router
+
+```javascript
+// example src /views/member/index.js
+import MemberListView from './MemberListView'
+// ---
+
+const routes = [
+	{
+		path: '/member',
+		exact: true,
+		component: MemberListView,
+	},
+]
+
+export default routes
+```
+
+5. Map main page view to main router
+
+```javascript
+// example src/views/index.js
+import concat from 'lodash/concat'
+// ---
+import auth from './auth'
+import main from './main'
+import blog from './blog'
+import member from './member' // << ----- add this
+// ---
+
+const routes = concat(auth, main, blog, member) // <---- add "member"
+
+export default routes
+```
