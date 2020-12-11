@@ -1,0 +1,21 @@
+{
+	"java.configuration.updateBuildConfiguration": "automatic",
+	"path-intellisense.mappings": {
+		"~/": "${workspaceRoot}/src"
+	},
+	"git.ignoreLimitWarning": true,
+	"editor.tabSize": 2,
+	"eslint.autoFixOnSave": true,
+	"eslint.alwaysShowStatus": true,
+	"eslint.enable": true,
+	"files.exclude": {
+		"node_modules": true,
+		".npm-offline-cache": true
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
