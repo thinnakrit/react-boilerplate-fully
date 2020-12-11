@@ -1,8 +1,5 @@
 import React, { Fragment } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators, compose } from 'redux'
 // ---
-import createSelector from '~/utils/automations/createSelector'
 import { Template } from '~/templates/v1'
 // ---
 import {
